@@ -1,0 +1,9 @@
+[
+  { "name": "Fallos de conexión / infraestructura", "matchedStatuses": ["broken", "failed", "skipped"],
+    "messageRegex": "(?s).*(Fallo al invocar|ConnectException|SocketTimeout|UnknownHost).*" },
+  { "name": "Incumplimiento de SLA", "matchedStatuses": ["failed"], "messageRegex": "(?s).*SLA incumplido.*" },
+  { "name": "Contrato roto (JSON Schema)", "matchedStatuses": ["failed"], "messageRegex": "(?s).*JSON Schema no cumple.*" },
+  { "name": "Respuesta inesperada", "matchedStatuses": ["broken", "failed"], "messageRegex": "(?s).*(no deserializable|no es JSON válido|429).*" },
+  { "name": "Payload inválido", "matchedStatuses": ["broken", "failed"], "messageRegex": "(?s).*Payload inválido.*" },
+  { "name": "Aserciones funcionales", "matchedStatuses": ["failed"] }
+]
