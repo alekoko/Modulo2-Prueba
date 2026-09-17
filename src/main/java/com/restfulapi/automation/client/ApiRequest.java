@@ -6,7 +6,6 @@ import io.restassured.http.Method;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
 public record ApiRequest(Method method,
                          ApiEndpoint endpoint,
                          Map<String, Object> pathParams,

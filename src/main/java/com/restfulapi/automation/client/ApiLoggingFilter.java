@@ -16,7 +16,6 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-
 public final class ApiLoggingFilter implements Filter {
 
     private static final Logger LOG = LoggerFactory.getLogger("API");
