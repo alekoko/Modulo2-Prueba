@@ -31,6 +31,7 @@ public abstract class BaseTest {
         timestampTolerance = Duration.ofMinutes(ConfigManager.getLong("validation.timestamp.tolerance.minutes", 10));
     }
 
+    /** Validaciones transversales a todos los casos: status, SLA, headers e integridad JSON. */
     protected ResponseValidator verifyCommon(Response response, int expectedStatus) {
         return ResponseValidator.verify(response)
                 .statusCode(expectedStatus)

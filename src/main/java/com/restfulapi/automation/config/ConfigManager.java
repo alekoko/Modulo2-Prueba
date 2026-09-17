@@ -17,16 +17,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Punto único de acceso a la configuración.
- * <p>
- * Precedencia (mayor a menor):
- * 1) System property (-Dbase.url=...)
- * 2) Variable de entorno (BASE_URL=...; puntos y guiones se convierten a "_")
- * 3) config/env/&lt;env&gt;.properties
- * 4) config.properties, endpoints.properties, email.properties
- * <p>
- * Los valores admiten placeholders ${VARIABLE:valorPorDefecto}, resueltos contra system properties y
- * variables de entorno: los secretos nunca se versionan.
  */
 public final class ConfigManager {
 

@@ -1,0 +1,40 @@
+{
+  "objects": {
+    "create": {
+      "name": "QA Automation - Apple MacBook Pro 16",
+      "data": {
+        "year": 2024,
+        "price": 2499.99,
+        "CPU model": "Apple M3 Max",
+        "Hard disk size": "1 TB",
+        "color": "Space Black"
+      }
+    },
+    "update": {
+      "name": "QA Automation - Apple MacBook Pro 16 (Actualizado)",
+      "data": {
+        "year": 2025,
+        "price": 2799.5,
+        "CPU model": "Apple M4 Max",
+        "Hard disk size": "2 TB",
+        "color": "Silver"
+      }
+    },
+    "negative": {
+      "nonExistentId": "ff808181932badb60193qa000000none",
+      "reservedId": "7"
+    }
+  },
+  "expected": {
+    "status": {
+      "ok": 200,
+      "notFound": 404,
+      "methodNotAllowed": 405
+    },
+    "messages": {
+      "notFound": "was not found",
+      "reservedId": "reserved id",
+      "deleted": "has been deleted"
+    }
+  }
+}
