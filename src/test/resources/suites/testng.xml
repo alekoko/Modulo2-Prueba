@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="restful-api.dev - API Suite" verbose="1">
+
+    <test name="Objects - Flujos exitosos">
+        <classes>
+            <class name="com.restfulapi.automation.tests.ObjectsSuccessTest"/>
+        </classes>
+    </test>
+
+    <test name="Objects - Excepciones">
+        <classes>
+            <class name="com.restfulapi.automation.tests.ObjectsExceptionTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ObjectCreated",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "data",
+    "createdAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data": {
+      "type": "object",
+      "required": [
+        "year",
+        "price"
+      ],
+      "properties": {
+        "year": {
+          "type": "integer"
+        },
+        "price": {
+          "type": "number",
+          "minimum": 0
+        },
+        "CPU model": {
+          "type": "string"
+        },
+        "Hard disk size": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        }
+      }
+    },
+    "createdAt": {
+      "description": "Epoch en milisegundos (comportamiento real) o ISO-8601 (formato documentado)",
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1000000000000
+        },
+        {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$"
+        }
+      ]
+    }
+  }
+}
