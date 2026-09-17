@@ -1,0 +1,23 @@
+# docker compose up --build --abort-on-container-exit api-tests
+#   - mailpit: servidor SMTP de pruebas; bandeja web en http://localhost:8025
+#   - api-tests: ejecuta la suite y envía el reporte al SMTP de mailpit
+services:
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "8025:8025"   # UI web para ver el correo y descargar el adjunto
+      - "1025:1025"   # SMTP
+
+  api-tests:
+    build: .
+    depends_on:
+      - mailpit
+    environment:
+      TEST_ENV: ${TEST_ENV:-qa}
+      API_KEY: ${API_KEY:-}
+      EMAIL_MODE: SMTP
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      EMAIL_TO: ${EMAIL_TO:-qa-team@example.com}
+    volumes:
+      - ./target:/app/target   # reporte, logs y .eml quedan disponibles en el host
